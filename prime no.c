@@ -14,10 +14,10 @@ void IsPrime(){
 		}
 	}
 	if (count>0){
-		printf("%d is a Prime Number!",num);
+		printf("%d is a not a Prime Number!",num);
 	}
 	else{
-		printf("%d is not a Prime Number!",num);
+		printf("%d is a Prime Number!",num);
 	}
 	}
 
