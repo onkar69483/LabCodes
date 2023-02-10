@@ -2,8 +2,11 @@
 #include<stdio.h>
 
 void Starpattern(){
-	      for(int i=0;i<5;i++){
-          for(int j=0;j<i;j++){
+    int num,i,j;
+    printf("Enter number: ");
+    scanf("%d",&num);
+      for(i=0;i<num;i++){
+          for( j=0;j<=i;j++){
           printf("*");
       }
       printf("\n");
