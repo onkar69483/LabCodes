@@ -1,6 +1,6 @@
 #include <stdio.h>
 int arraysearch(){
-	int i,n,a[100],num;
+	int i,n,a[100],num,occ=0;
 	printf("Enter the size of array: ");
 	scanf("%d",&n);
 	printf("Enter the elements of the array: ");
@@ -11,7 +11,10 @@ int arraysearch(){
 	scanf("%d",&num);
 	for(i=0;i<n;i++){
 		if(a[i]==num){
-			printf("Element found!");
+			occ++;
+		}
+		if(i==n-1 && occ>0){
+		    printf("Element found!\nNumber of occurrences: %d",occ);
 			return 0;
 		}
 	}
