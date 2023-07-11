@@ -30,7 +30,7 @@ int bintodec(int bin){
 
 void dectooct(int dec)
 {
-    int oct[100];
+    int oct[32];
 
     int i = 0;
     while (dec!= 0) {
@@ -56,29 +56,61 @@ int octtodec(int oct){
 }
 
 void dectohex(int dec){
-	int hex[100];
+	int hex[32],rem;
     int i = 0;
     while (dec!= 0) {
-
-        hex[i] = dec % 8;
-        dec = dec / 8;
+        rem = dec%16;
+        if(rem>9){
+            rem = rem-10+65;
+            hex[i]=rem;
+        }else{
+         hex[i] = dec % 16;
+        }
+        dec = dec / 16;
         i++;
     }
      int j=0;
-    for (j = i - 1; j >= 0; j--)
-        printf("%d", hex[j]);
+    for (j = i - 1; j >= 0; j--){
+        if(hex[j]>=65){
+            printf("%c",hex[j]);
+        }else{
+            printf("%d", hex[j]);
+        }
+    }       
+}
+
+int hextodec(char strhex[]){
+    
+    int dec=0,rem =0,i,len,j=0;
+    for(len=0;strhex[len]!='\0';len++);    
+
+    for(i=len-1;i>=0;i--){
+        if(strhex[i]>=65){
+            rem = strhex[i]-65+10;
+            dec += rem*pow(16,j);
+        }else{
+            rem = strhex[i]-48;
+            dec += rem*pow(16,j);
+        }
+        j++;
+    }
+    return dec;
 }
 
 int main() {
     	
-	int dec,bin,oct,n;
+	int dec,bin,oct,n=0;
+    char hex[100];
+    printf("%c",hex[0]);
 	printf("Menu: ");
 	printf("\n1. decimal to binary");
 	printf("\n2. binary to decimal");
 	printf("\n3. decimal to octal");
 	printf("\n4. octal to decimal");
 	printf("\n5. decimal to Hexadecimal");
-	printf("\n6. Exit!");
+    printf("\n6. hexadecimal to decimal");
+	printf("\n7. Exit!");
+    while(n!=7){
 	printf("\nEnter your choice: ");
 	scanf("%d", &n);
 	switch(n){
@@ -90,24 +122,29 @@ int main() {
     scanf("%d",&bin);
     printf("%d",bintodec(bin));
     break;
-     case 3: printf("\nEnter a decimal number: ");
+     case 3: printf("\nEnter a Decimal number: ");
 	scanf("%d",&dec);
     dectooct(dec);
     break;
-    case 4: printf("\nEnter a octal: ");
+    case 4: printf("\nEnter an Octal number: ");
     scanf("%d",&oct);
     printf("%d",octtodec(oct));
     break;
-    case 5: printf("\nEnter a decimal number: ");
+    case 5: printf("\nEnter a Decimal number: ");
 	scanf("%d",&dec);
     dectohex(dec);
     break;
-    case 6: return(0);
+    case 6: printf("\nEnter a Hexadecimal number: ");
+    scanf("%s",hex);
+    printf("%d",hextodec(hex));
+    break;
+    case 7: return(0);
     break;
     default:
     	printf("Invalid output!");
     	break;
 	}
+    }
     
 		return 0;
 }
