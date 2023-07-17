@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-//program to convert any base to decimal and vice versa
+//program to convert any decimal to various types and vice versa
 
-void dectobin(int dec){
+void dectobin(int dec){ //convert decimal to binary
 	int bin[32];
 
     int i = 0;
@@ -17,7 +17,7 @@ void dectobin(int dec){
         printf("%d",bin[j]);
 }
 
-int bintodec(int bin){
+int bintodec(int bin){  //convert binary to decimal
 	int dec=0,rem =0,i=0;
     while(bin!=0){
     rem = bin%10;
@@ -28,7 +28,7 @@ int bintodec(int bin){
     return dec;
 }
 
-void dectooct(int dec)
+void dectooct(int dec) //convert decimal to octal
 {
     int oct[32];
 
@@ -44,7 +44,7 @@ void dectooct(int dec)
         printf("%d", oct[j]);
 }
 
-int octtodec(int oct){
+int octtodec(int oct){ //convert octal to decimal
 	int dec=0,rem =0,i=0;
     while(oct!=0){
     rem = oct%10;
@@ -55,7 +55,7 @@ int octtodec(int oct){
     return dec;
 }
 
-void dectohex(int dec){
+void dectohex(int dec){ //convert decimal to hexadecimal
 	int hex[32],rem;
     int i = 0;
     while (dec!= 0) {
@@ -79,7 +79,7 @@ void dectohex(int dec){
     }       
 }
 
-int hextodec(char strhex[]){
+int hextodec(char strhex[]){ //convert hexadecimal to decimal
     
     int dec=0,rem =0,i,len,j=0;
     for(len=0;strhex[len]!='\0';len++);    
@@ -108,7 +108,7 @@ int main() {
 	printf("\n3. decimal to octal");
 	printf("\n4. octal to decimal");
 	printf("\n5. decimal to Hexadecimal");
-    printf("\n6. hexadecimal to decimal");
+        printf("\n6. hexadecimal to decimal");
 	printf("\n7. Exit!");
     while(n!=7){
 	printf("\nEnter your choice: ");
