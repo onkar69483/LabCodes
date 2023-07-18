@@ -1,25 +1,27 @@
-
 #include <stdio.h>
 #include <math.h>
+
 void add(int real1,int real2, int imaginary1, int imaginary2){
-	printf("\nAddition: %d+%di",real1+real2,imaginary1+imaginary2);
+	printf("\nAddition: %d+%di\n",real1+real2,imaginary1+imaginary2);
 }
 
 void subtract(int real1,int real2, int imaginary1, int imaginary2){
-	printf("\nSubtraction: %d+%di",abs(real1-real2),abs(imaginary1-imaginary2));
+	printf("\nSubtraction: %d+%di\n",abs(real1-real2),abs(imaginary1-imaginary2));
 }
 
 void multiplication(int real1,int real2, int imaginary1, int imaginary2){
-	printf("\nMultiplication: %d+%di",(real1*real2-imaginary1*imaginary2), (real1*imaginary2 +real2*imaginary1));
+	printf("\nMultiplication: %d+%di\n",(real1*real2-imaginary1*imaginary2), (real1*imaginary2 +real2*imaginary1));
 }
 
 int main() {
-    int real1,real2,imaginary1,imaginary2,choice;
+    int real1,real2,imaginary1,imaginary2,choice=0;
     
-    printf("Choose\n1.Addition\n2.Subtraction\n3.Multiplication");
+    while(choice<4){
+    printf("\nChoose\n1.Addition\n2.Subtraction\n3.Multiplication\n4.Exit!");
     printf("\nEnter choice: ");
     scanf("%d",&choice);
-    
+  
+    if(choice<4){
     printf("Enter real part of first complex number: ");
     scanf("%d",&real1);
     printf("Enter imaginary part of first complex number: ");
@@ -37,9 +39,13 @@ int main() {
         break;
         case 3: multiplication(real1,real2,imaginary1,imaginary2);
         break;
+        case 4: return 0;
+        break;
         default: printf("Invalid Choice!");
         break;
     }
+}
+  }
     
     return 0;
 }
