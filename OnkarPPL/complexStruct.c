@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <math.h>
 
 struct Complex
 {
@@ -12,7 +11,7 @@ void add(int real1,int real2, int imaginary1, int imaginary2){
 }
 
 void subtract(int real1,int real2, int imaginary1, int imaginary2){
-	printf("\nSubtraction: %d+%di\n",abs(real1-real2),abs(imaginary1-imaginary2));
+	printf("\nSubtraction: %d+%di\n",(real1-real2),(imaginary1-imaginary2));
 }
 
 void multiplication(int real1,int real2, int imaginary1, int imaginary2){
