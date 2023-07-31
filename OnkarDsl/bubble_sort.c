@@ -1,21 +1,37 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
-int bubble() {
-	int arr1[] = {49,56,2,3};
-	int i,j;
-	for(j=0;j<4;j++){
-	for(i=0;i<4;i++){
-		if(arr1[i]>arr1[j]){
-         int temp = arr1[i];
-         arr1[i] = arr1[j];
-         arr1[j] = temp;
-		}
+void bubbleSort(int arr[],int size) {
+	int i,j,flag=0;
+	for(i=0;i<size-1;i++){
+	    flag=0;
+	    for(j=0;j<size-i-1;j++){
+	        if(arr[j]>arr[j+1]){
+	            int temp=arr[j];
+	            arr[j]=arr[j+1];
+	            arr[j+1]=temp;
+	            flag=1;
+	        }
+	    }
+	    if(flag==0){
+	        break;
+	    }
 	}
 }
-    for(i=0;i<4;i++){
-    	printf("%d ",arr1[i]);
+
+void main(){
+    int size,i;
+    printf("Enter size of array: ");
+    scanf("%d",&size);
+    int arr[size];
+    printf("Enter elements of array: ");
+    for(i=0;i<size;i++){
+        scanf("%d",&arr[i]);
     }
-	return 0;
+    printf("\nSorting the array!");
+	bubbleSort(arr,5);
+	printf("\nSorted array below!\n");
+    for(i=0;i<5;i++){
+    	printf("%d ",arr[i]);
+    }
 }
