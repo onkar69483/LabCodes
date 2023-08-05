@@ -5,7 +5,7 @@
  Click to view
 
 ## Programming Paradigm Lab
-[![Assignment 1](https://img.shields.io/badge/Open-Assignment%201-blue)](Assignment1.md)
+[![Assignment 1](https://img.shields.io/badge/Open-Assignment%201-blue)](OnkarPPL/Assignment1.md)
 
 [![Assignment 2](https://img.shields.io/badge/Open-Assignment%202-blue)](Assignment2.md)
 
