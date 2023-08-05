@@ -5,7 +5,7 @@
  Click to view
 
 ## Programming Paradigm Lab
-[![Visit Folder](https://img.shields.io/badge/Open-OnkarPPL-blue)](OnkarPPL/)
+[![Visit Folder](https://img.shields.io/badge/Open-Visit Folder-blue)](OnkarPPL/)
 
 [![Assignment 1](https://img.shields.io/badge/Open-Assignment%201-blue)](OnkarPPL/Assignment1.md)
 
