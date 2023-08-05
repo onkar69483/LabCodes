@@ -1,5 +1,5 @@
-# LabCodes
-## This repository contains all the data & the experiments done during my Lab Sessions
+#LabCodes
+##This repository contains all the data & the experiments done during my Lab Sessions
 
 ## Data Structure Lab
 [![Visit Folder](https://img.shields.io/badge/Open-Visit%20Folder-blue)](OnkarDsl)
