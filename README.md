@@ -2,7 +2,7 @@
 ## This repository contains all the data & the experiments done during my Lab Sessions
 
 ## Data Structure Lab
- Click to view
+[![Visit Folder](https://img.shields.io/badge/Open-Visit%20Folder-blue)](OnkarDsl)
 
 ## Programming Paradigm Lab
 [![Visit Folder](https://img.shields.io/badge/Open-Visit%20Folder-blue)](OnkarPPL)
