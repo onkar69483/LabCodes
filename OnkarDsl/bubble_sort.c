@@ -29,9 +29,9 @@ void main(){
         scanf("%d",&arr[i]);
     }
     printf("\nSorting the array!");
-	bubbleSort(arr,5);
+	bubbleSort(arr,size);
 	printf("\nSorted array below!\n");
-    for(i=0;i<5;i++){
+    for(i=0;i<size;i++){
     	printf("%d ",arr[i]);
     }
 }
