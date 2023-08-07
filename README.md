@@ -4,6 +4,11 @@
 ## Data Structure Lab
 [![Visit Folder](https://img.shields.io/badge/Open-Visit%20Folder-blue)](OnkarDsl)
 
+[![Search Algorithms](https://img.shields.io/badge/Open-Search%20Algorithms-blue)](searchAlgo.c)
+[![Bubble Sort](https://img.shields.io/badge/Open-Bubble%20Sort-blue)](bubble_sort.c)
+[![Selection Sort](https://img.shields.io/badge/Open-Selection%20Sort-blue)](selectionSort.c)
+[![Quick Sort](https://img.shields.io/badge/Open-Quick%20Sort-blue)](quickSort)
+
 ## Programming Paradigm Lab
 [![Visit Folder](https://img.shields.io/badge/Open-Visit%20Folder-blue)](OnkarPPL)
 
