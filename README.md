@@ -10,7 +10,7 @@
 [![Quick Sort](https://img.shields.io/badge/Open-Quick%20Sort-blue)](OnkarDsl/quickSort.c)
 [![Insertion Sort](https://img.shields.io/badge/Open-Insertion%20Sort-blue)](OnkarDsl/insertionSort.c)
 
-[![Time Complexities](https://img.shields.io/badge/Open-Time%20Complexities-blue)](OnkarDsl/TimeComplexities.c)
+[![Time Complexities](https://img.shields.io/badge/Open-Time%20Complexities-blue)](OnkarDsl/OnkarDsl/TimeComplexities.c)
 
 ## Programming Paradigm Lab
 [![Visit Folder](https://img.shields.io/badge/Open-Visit%20Folder-blue)](OnkarPPL)
