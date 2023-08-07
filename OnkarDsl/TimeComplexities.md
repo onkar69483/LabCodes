@@ -2,7 +2,6 @@
 
 ## Bubble sort
 
-Best Case : O(n)
-
-Worst Case : O(n2)
+ Best Case : O(n)
+ Worst Case : O(n2)
 
