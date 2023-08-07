@@ -9,7 +9,7 @@
  * Worst Case : O(N^2)
 
 ### Quick Sort
- * Best Case : 
+ * Best Case : O(Nlog(N))
  * Worst Case : O(N^2)
 
 ### Insertion Sort
