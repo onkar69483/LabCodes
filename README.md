@@ -8,6 +8,7 @@
 [![Bubble Sort](https://img.shields.io/badge/Open-Bubble%20Sort-blue)](OnkarDsl/bubble_sort.c)
 [![Selection Sort](https://img.shields.io/badge/Open-Selection%20Sort-blue)](OnkarDsl/selectionSort.c)
 [![Quick Sort](https://img.shields.io/badge/Open-Quick%20Sort-blue)](OnkarDsl/quickSort.c)
+[![Insertion Sort](https://img.shields.io/badge/Open-Insertion%20Sort-blue)](OnkarDsl/insertionSort.c)
 
 ## Programming Paradigm Lab
 [![Visit Folder](https://img.shields.io/badge/Open-Visit%20Folder-blue)](OnkarPPL)
