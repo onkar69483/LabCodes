@@ -1,6 +1,20 @@
 # Time Complexities of Sorting Algorithm
 
-## Bubble sort
+## Bubble Sort
  Best Case : O(n)
  Worst Case : O(n2)
+
+## Selection Sort
+ Best Case : O(n)
+ Worst Case : O(n2)
+
+## Quick Sort
+ Best Case : O(n)
+ Worst Case : O(n2)
+
+## Insertion Sort
+ Best Case : O(n)
+ Worst Case : O(n2)
+ 
+ 
 
