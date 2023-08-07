@@ -1,9 +1,9 @@
 # Data Structure Lab
 
-[![Search Algorithms](https://img.shields.io/badge/Open-Visit%20Folder-blue)](searchAlgo.c)
-[![Bubble Sort](https://img.shields.io/badge/Open-Visit%20Folder-blue)](bubble_sort.c)
-[![Selection Sort](https://img.shields.io/badge/Open-Visit%20Folder-blue)](selectionSort.c)
-[![Quick Sort](https://img.shields.io/badge/Open-Visit%20Folder-blue)](quickSort)
+[![Search Algorithms](https://img.shields.io/badge/Open-Search%20Algorithms-blue)](searchAlgo.c)
+[![Bubble Sort](https://img.shields.io/badge/Open-Bubble%20Sort-blue)](bubble_sort.c)
+[![Selection Sort](https://img.shields.io/badge/Open-Selection%20Sort-blue)](selectionSort.c)
+[![Quick Sort](https://img.shields.io/badge/Open-Quick%20Sort-blue)](quickSort)
 
 
 
