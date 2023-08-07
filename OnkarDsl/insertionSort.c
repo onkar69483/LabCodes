@@ -1,3 +1,4 @@
+#include <stdio.h>
 void insertionSort(int arr[],int size){
 	int i,key,j;
 	for(i=1;i<size;i++){
@@ -10,10 +11,6 @@ void insertionSort(int arr[],int size){
 		arr[j+1]=key;
 	}
 }
-
-
-
-
 int main(){
 	int i,arr[10];
 	printf("Enter elements of array: ");
@@ -25,6 +22,5 @@ int main(){
 	for(i=0;i<10;i++){
 		printf("%d ",arr[i]);
 	}
-	
 	return 0;
 }
