@@ -8,7 +8,12 @@ PhoneBook = {}
 def add_num(PhoneBook, size):
     for i in range(size):    
         name = input("Enter name of person: ")
-        phoneNum = int(input("Enter phone number: "))
+        phoneNum="0"
+        while(len(phoneNum)!=6 or phoneNum[0]=="0"):
+            phoneNum = input("Enter phone number: ")
+            if(len(phoneNum)==10):
+                break
+        phoneNum = int(phoneNum)
         PhoneBook.update({name: phoneNum})
     return "Phone Numbers Saved!"
 
