@@ -15,6 +15,11 @@
 ### Insertion Sort
  * Best Case : O(N)
  * Worst Case : O(N^2)
- 
+
+### Merge Sort
+ * Best Case : O(Nlog(N))
+ * Worst Case : O(Nlog(N))
+
+
  
 
