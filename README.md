@@ -9,6 +9,7 @@
 [![Selection Sort](https://img.shields.io/badge/Open-Selection%20Sort-blue)](OnkarDsl/selectionSort.c)
 [![Quick Sort](https://img.shields.io/badge/Open-Quick%20Sort-blue)](OnkarDsl/quickSort.c)
 [![Insertion Sort](https://img.shields.io/badge/Open-Insertion%20Sort-blue)](OnkarDsl/insertionSort.c)
+[![Insertion Sort](https://img.shields.io/badge/Open-Merge%20Sort-blue)](OnkarDsl/mergeSort.c)
 
 [![Time Complexities](https://img.shields.io/badge/Open-Time%20Complexities-blue)](OnkarDsl/TimeComplexities.md)
 
