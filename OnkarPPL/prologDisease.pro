@@ -24,3 +24,6 @@ symptom(Patient,headache),symptom(Patient,sneezing),symptom(Patient,sore_throat)
 
 disease(Patient,flu):-
 symptom(Patient,chills),symptom(Patient,fever),symptom(Patient,headache),!.
+
+disease(Patient,hypertension):-
+symptom(Patient,high_BP);symptom(Patient,headache),!.
