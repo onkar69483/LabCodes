@@ -23,8 +23,8 @@ void insert(struct ListNode** head, int data) {
 }
 
 struct ListNode* mergeLists(struct ListNode* list1, struct ListNode* list2) {
-    struct ListNode dummy;
-    struct ListNode* tail = &dummy;
+    struct ListNode new;
+    struct ListNode* tail = &new;
 
     while (1) {
         if (list1 == NULL) {
@@ -46,7 +46,7 @@ struct ListNode* mergeLists(struct ListNode* list1, struct ListNode* list2) {
         tail = tail->next;
     }
 
-    return dummy.next;
+    return new.next;
 }
 
 struct ListNode* binarySearch(struct ListNode* head, int key) {
