@@ -1,10 +1,10 @@
 # Data Structure Lab
 
-[![Search Algorithms](https://img.shields.io/badge/Open-Search%20Algorithms-blue)](searchAlgo.c)
-[![Bubble Sort](https://img.shields.io/badge/Open-Bubble%20Sort-blue)](bubble_sort.c)
-[![Selection Sort](https://img.shields.io/badge/Open-Selection%20Sort-blue)](selectionSort.c)
-[![Quick Sort](https://img.shields.io/badge/Open-Quick%20Sort-blue)](quickSort.c)
-[![Insertion Sort](https://img.shields.io/badge/Open-Insertion%20Sort-blue)](insertionSort.c)
-[![Insertion Sort](https://img.shields.io/badge/Open-Merge%20Sort-blue)](mergeSort.c)
+Explore various data structures and sorting algorithms:
 
-
+- [Search Algorithms](searchAlgo.c)
+- [Bubble Sort](bubble_sort.c)
+- [Selection Sort](selectionSort.c)
+- [Quick Sort](quickSort.c)
+- [Insertion Sort](insertionSort.c)
+- [Merge Sort](mergeSort.c)
