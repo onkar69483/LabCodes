@@ -1,25 +1,33 @@
-# LabCodes
-## This repository contains all the data & the experiments done during my Lab Sessions
+# LabCodes Repository
+
+![GitHub repo size](https://img.shields.io/github/repo-size/onkar69483/LabCodes)
+![GitHub stars](https://img.shields.io/github/stars/onkar69483/LabCodes?style=social)
+![GitHub forks](https://img.shields.io/github/forks/onkar69483/LabCodes?style=social)
+
+This repository contains all the data and experiments conducted during my Lab Sessions.
 
 ## Data Structure Lab
-[![Visit Folder](https://img.shields.io/badge/Open-Visit%20Folder-blue)](OnkarDsl)
-
-[![Search Algorithms](https://img.shields.io/badge/Open-Search%20Algorithms-blue)](OnkarDsl/searchAlgo.c)
-[![Bubble Sort](https://img.shields.io/badge/Open-Bubble%20Sort-blue)](OnkarDsl/bubble_sort.c)
-[![Selection Sort](https://img.shields.io/badge/Open-Selection%20Sort-blue)](OnkarDsl/selectionSort.c)
-[![Quick Sort](https://img.shields.io/badge/Open-Quick%20Sort-blue)](OnkarDsl/quickSort.c)
-[![Insertion Sort](https://img.shields.io/badge/Open-Insertion%20Sort-blue)](OnkarDsl/insertionSort.c)
-[![Insertion Sort](https://img.shields.io/badge/Open-Merge%20Sort-blue)](OnkarDsl/mergeSort.c)
-
-[![Time Complexities](https://img.shields.io/badge/Open-Time%20Complexities-blue)](OnkarDsl/TimeComplexities.md)
+### Algorithms and Sorting
+- [Search Algorithms](OnkarDsl/searchAlgo.c)
+- [Bubble Sort](OnkarDsl/bubble_sort.c)
+- [Selection Sort](OnkarDsl/selectionSort.c)
+- [Quick Sort](OnkarDsl/quickSort.c)
+- [Insertion Sort](OnkarDsl/insertionSort.c)
+- [Merge Sort](OnkarDsl/mergeSort.c)
+- [Time Complexities](OnkarDsl/TimeComplexities.md)
 
 ## Programming Paradigm Lab
-[![Visit Folder](https://img.shields.io/badge/Open-Visit%20Folder-blue)](OnkarPPL)
+### Assignments
+- [Assignment 1](OnkarPPL/Assignment1.md)
+- [Assignment 2](OnkarPPL/Assignment2.md)
+- [Assignment 3](OnkarPPL/Assignment3.md)
+- [Assignment 4](OnkarPPL/Assignment4.md)
+- [Assignment 5](OnkarPPL/Assignment5.md)
+- [Assignment 6](OnkarPPL/Assignment6.md)
 
-[![Assignment 1](https://img.shields.io/badge/Open-Assignment%201-blue)](OnkarPPL/Assignment1.md)
+---
 
-[![Assignment 2](https://img.shields.io/badge/Open-Assignment%202-blue)](OnkarPPL/Assignment2.md)
+Feel free to explore the folders and files to learn more about the experiments and projects conducted in these lab sessions.
 
-[![Assignment 3](https://img.shields.io/badge/Open-Assignment%203-blue)](OnkarPPL/Assignment3.md)
-
-[![Assignment 4](https://img.shields.io/badge/Open-Assignment%204-blue)](OnkarPPL/Assignment4.md)
+[![Visit Data Structure Lab](https://img.shields.io/badge/Open-Data%20Structure%20Lab-blue)](OnkarDsl)
+[![Visit Programming Paradigm Lab](https://img.shields.io/badge/Open-Programming%20Paradigm%20Lab-blue)](OnkarPPL)
