@@ -1,8 +1,10 @@
 # Programming Paradigm Assignments
-[![Assignment 1](https://img.shields.io/badge/Open-Assignment%201-blue)](Assignment1.md)
 
-[![Assignment 2](https://img.shields.io/badge/Open-Assignment%202-blue)](Assignment2.md)
+Discover the world of programming paradigms through these assignments:
 
-[![Assignment 3](https://img.shields.io/badge/Open-Assignment%203-blue)](Assignment3.md)
-
-[![Assignment 4](https://img.shields.io/badge/Open-Assignment%204-blue)](Assignment4.md)
+- [Assignment 1](Assignment1.md)
+- [Assignment 2](Assignment2.md)
+- [Assignment 3](Assignment3.md)
+- [Assignment 4](Assignment4.md)
+- [Assignment 5](Assignment5.md)
+- [Assignment 6](Assignment6.md)
