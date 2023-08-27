@@ -8,13 +8,15 @@ This repository contains all the data and experiments conducted during my Lab Se
 
 ## Data Structure Lab
 ### Algorithms and Sorting
-- [Search Algorithms](OnkarDsl/searchAlgo.c)
-- [Bubble Sort](OnkarDsl/bubble_sort.c)
-- [Selection Sort](OnkarDsl/selectionSort.c)
-- [Quick Sort](OnkarDsl/quickSort.c)
-- [Insertion Sort](OnkarDsl/insertionSort.c)
-- [Merge Sort](OnkarDsl/mergeSort.c)
-- [Time Complexities](OnkarDsl/TimeComplexities.md)
+- [Search Algorithms](OnkarDsl/1_searchAlgo.c)
+- [Bubble Sort](OnkarDsl/2_bubble_sort.c)
+- [Selection Sort](OnkarDsl/3_selectionSort.c)
+- [Quick Sort](OnkarDsl/4_quickSort.c)
+- [Insertion Sort](OnkarDsl/5_insertionSort.c)
+- [Merge Sort](OnkarDsl/6_mergeSort.c)
+- [Time Complexities](OnkarDsl/6_timeComplexities.md)
+- [Linked List](OnkarDsl/7_linkedList.c)
+- [Searching and Sorting Using Linked List](OnkarDsl/8_dllSearching_sorting.c)
 
 ## Programming Paradigm Lab
 ### Assignments
