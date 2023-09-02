@@ -1,123 +1,148 @@
+// Online C compiler to run C program online
 #include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-struct node {
-   int data;
-   struct node *next;
+#include<stdlib.h>
+
+struct node{
+    int data;
+    struct node * next;
 };
-struct node *head = NULL;
-struct node *current = NULL;
 
-// display the list
-void printList(){
-   struct node *p = head;
-   printf("\n[");
-
-   //start from the beginning
-   while(p != NULL) {
-      printf(" %d ",p->data);
-      p = p->next;
-   }
-   printf("]");
+void linkedlisttraversal(struct node * ptr){
+    while(ptr!=NULL){
+        printf("Element : %d\n",ptr->data);
+        ptr = ptr ->next;
+    }
 }
 
-//insertion at the beginning
-void insertatbegin(int data){
+struct node * insertatbegin(struct node * head,int data){
+    struct node * ptr = (struct node *)malloc(sizeof(struct node));
+    ptr -> data = data;
+    ptr -> next = head;
+    return ptr;
+};
 
-   //create a link
-   struct node *lk = (struct node*) malloc(sizeof(struct node));
-   lk->data = data;
+struct node * insertatindex(struct node * head , int data , int index){
+    struct node * ptr = (struct node*)malloc(sizeof(struct node));
+    struct node * p = head;
+    int i=0;
+    while(i!=index-1){
+        p = p->next;
+        i++;
+    }
+    ptr->data = data;
+    ptr->next = p->next;
+    p->next = ptr;
+    return head;
+};
 
-   // point it to old first node
-   lk->next = head;
+struct node * insertatend(struct node * head , int data){
+    struct node * ptr = (struct node *)malloc(sizeof(struct node));
+    struct node * p = head;
+    ptr->data = data;
+    while(p->next!=NULL){
+        p = p->next;
+    }
+    p->next = ptr;
+    ptr->next = NULL;
+    return head;
+};
 
-   //point first to new first node
-   head = lk;
-}
-void insertatend(int data){
+struct node * afternode(struct node * head , struct node * prevnode ,int data){
+    struct node * ptr = (struct node *)malloc(sizeof(struct node));
+    ptr->data = data;
+    ptr->next = prevnode->next;
+    prevnode->next =ptr;
+    return head;
+};
 
-   //create a link
-   struct node *lk = (struct node*) malloc(sizeof(struct node));
-   lk->data = data;
-   struct node *linkedlist = head;
-
-   // point it to old first node
-   while(linkedlist->next != NULL)
-      linkedlist = linkedlist->next;
-
-   //point first to new first node
-   linkedlist->next = lk;
-}
-void insertafternode(struct node *list, int data){
-   struct node *lk = (struct node*) malloc(sizeof(struct node));
-   lk->data = data;
-   lk->next = list->next;
-   list->next = lk;
-}
-void deleteatbegin(){
+struct node * deleteatbegin(struct node * head){
+   struct node * p = head ;
    head = head->next;
-}
-void deleteatend(){
-   struct node *linkedlist = head;
-   while (linkedlist->next->next != NULL)
-      linkedlist = linkedlist->next;
-   linkedlist->next = NULL;
-}
-void deletenode(int key){
-   struct node *temp = head, *prev;
-   if (temp != NULL && temp->data == key) {
-      head = temp->next;
-      return;
-   }
+};
 
-   // Find the key to be deleted
-   while (temp != NULL && temp->data != key) {
-      prev = temp;
-      temp = temp->next;
-   }
+struct node * deletenode(struct node * head,int key){
+    struct node * temp = head, *prev;
+    while(temp != NULL && temp->data !=key){
+        prev = temp ;
+        temp = temp->next;
+    }
+    if(temp==NULL) {
+        return head;
+    }
+    prev->next = temp->next;
+};
 
-   // If the key is not present
-   if (temp == NULL) return;
+struct node * deleteatend(struct node * head){
+    struct node * ptr = head;
+    while(ptr->next->next != NULL){
+        ptr = ptr->next;
+    }
+    ptr->next=NULL;
+};
 
-   // Remove the node
-   prev->next = temp->next;
-}
-int searchlist(int key){
-   struct node *temp = head;
-   while(temp != NULL) {
-      if (temp->data == key) {
-         return 1;
-      }
-      temp=temp->next;
-   }
-   return 0;
-}
-void main(){
-   int k=0;
-   insertatbegin(12);
-   insertatbegin(22);
-   insertatend(30);
-   insertatend(44);
-   insertatbegin(50);
-   insertafternode(head->next->next, 33);
-   printf("Linked List: ");
+struct node * search(struct node * head,int key){
+    struct node * ptr = head;
+    while(ptr!=NULL){
+        if(ptr->data==key){
+        printf("Found\n");
+        return head;
+    }
+        ptr = ptr -> next;
+    }
+      printf("not found\n");
+      return head;
+};
 
-   // print list
-   printList();
-   deleteatbegin();
-   deleteatend();
-   deletenode(12);
-   printf("\nLinked List after deletion: ");
-
-   // print list
-   printList();
-   insertatbegin(4);
-   insertatbegin(16);
-   printf("\nUpdated Linked List: ");
-   printList();
-   k = searchlist(16);
-   if (k == 1)
-      printf("\nElement is found");
-   else
-      printf("\nElement is not present in the list");
+int main() {
+    int ops=0;
+    struct node * head;
+    struct node * second;
+    struct node * third;
+    
+    head = (struct node * )malloc(sizeof(struct node));
+    second = (struct node * )malloc(sizeof(struct node));
+    third = (struct node * )malloc(sizeof(struct node));
+    
+    head -> data = 65;
+    head -> next = second;
+    
+    second -> data =88;
+    second -> next = third;
+    
+    third -> data = 42;
+    third -> next = NULL;
+    
+    printf("Linked list is : \n");
+    linkedlisttraversal(head);
+    printf("Select the correct option : \n");
+    printf("1) Insert at Begin \n2) Insert at index \n3) Insert at end \n4) Insert after node \n5) Delete at begin \n6) Delete node \n7)Delete at end\n8) Search\n");
+    scanf("%d",&ops);
+    switch(ops){
+        case 1:
+            head = insertatbegin(head,58);
+           break;
+        case 2:
+            head = insertatindex(head,74,1);
+            break;
+        case 3:
+            head = insertatend(head,25);
+            break;
+        case 4:
+            head = afternode(head,third,96);
+            break;
+        case 5:
+        	head = deleteatbegin(head);
+        	break;
+        case 6:
+            head = deletenode(head,36);
+            break;
+        case 7:
+            head = deleteatend(head);
+            break;
+        case 8:
+            head = search(head,45);
+		     
+    }
+    linkedlisttraversal(head);
+    return 0;
 }
