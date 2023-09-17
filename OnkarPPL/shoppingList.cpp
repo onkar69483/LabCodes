@@ -1,11 +1,13 @@
 #include <iostream>
 #include <iomanip>
 using namespace std;
-int count=0;
 class Shopping{
 	string item[10];
 	double price[10];
 	int qty[10];
+    int count=0;
+    double total=0;
+    int total_qty=0;
 	public:
 	void add_item(){
 		cout<<"Enter item name: ";
@@ -14,7 +16,9 @@ class Shopping{
 		cin>>price[count];
 		cout<<"Enter Quantity: ";
 		cin>>qty[count];
-		count++;
+		total = total + price[count]*qty[count];
+        total_qty = total_qty + qty[count];
+        count++;
 	}
 	void display(){
 		int i;
@@ -22,6 +26,8 @@ class Shopping{
 		for(i=0;i<count;i++){
 			cout<<left<<setw(15)<<i+100<<setw(15)<<item[i]<<setw(15)<<qty[i]<<setw(15)<<price[i]<<setw(15)<<qty[i]*price[i]<<endl;
 		}
+        cout<<endl<<"Grand Total: "<<total;
+        cout<<endl<<"Value in Inventory: "<<total_qty<<endl;
 	}
 	void del_item(){
 	    int i;
@@ -33,6 +39,8 @@ class Shopping{
 		        break;
 		    }
 		}
+        total = total - price[i]*qty[i];
+        total_qty = total_qty - qty[i];
 		while(i!=count-1){
 		    item[i]=item[i+1];
 		    item[i+1]="";
