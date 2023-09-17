@@ -1,111 +1,143 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//Creation of node
+//create node
 struct node{
     int data;
-    struct node *next; //pointer which points to the next node of struct type
+    struct node *next;
 };
-
-struct node *head= NULL;//initializing head pointer
+struct node *head = NULL;
+//print/traverse list
 void printlist(){
-    struct node *temp=head;
-    printf("\n[ ");
-    while(temp!=NULL){
-        printf("%d ",temp->data);
-        temp=temp->next;
+    struct node *p = head;
+    printf("\n[");
+    while(p!=NULL){
+        printf(" %d",p->data);
+        p=p->next;
     }
-    printf("]\n");
+    printf(" ]\n");
 }
+struct node *insertnode(struct node *ptr, int data){
+    struct node *newnode = (struct node*)malloc(sizeof(struct node));
+    newnode->data=data;
+    newnode->next=ptr;
+    ptr=newnode;
+    return ptr;
+}
+//insert element at begin
 void insertatbegin(int data){
     struct node *newnode = (struct node*)malloc(sizeof(struct node));
     newnode->data=data;
     newnode->next=head;
-    head=newnode;
+    head = newnode;
 }
+//insert element at end
 void insertatend(int data){
     struct node *newnode = (struct node*)malloc(sizeof(struct node));
     newnode->data = data;
-    newnode->next=NULL;
-    struct node *temp=head;
-    while(temp->next!=NULL){
-        temp=temp->next;
+    newnode->next = NULL;
+    struct node *temp = head;
+    while(temp->next!= NULL){
+        temp = temp->next;
     }
+    temp->next = newnode;
+}
+//insertatpos
+void insertatpos(int pos,int data){
+    struct node *newnode = (struct node*)malloc(sizeof(struct node));
+    newnode->data = data;
+    struct node *temp = head;
+    int count =1;
+    while(count!=pos-1){
+        if(temp->next==NULL){
+            printf("\nElement position for insertion not found!");
+            return;
+        }
+        temp=temp->next;
+        count++;
+    }
+    newnode->next = temp->next;
     temp->next=newnode;
 }
-void insertafter(int pos,int data){
+//insertafterpos 
+void insertafterpos(int pos,int data){
     struct node *newnode = (struct node*)malloc(sizeof(struct node));
-    newnode->data=data;
+    newnode->data = data;
     struct node *temp = head;
-    while(temp->data!=pos){
+    int count =1;
+    while(count!=pos){
+        if(temp->next==NULL){
+            printf("\nElement position for insertion not found!");
+            return;
+        }
+        temp=temp->next;
+        count++;
+    }
+    newnode->next = temp->next;
+    temp->next=newnode;
+}
+//insert after some element
+void insertafter(int element,int data){
+    struct node *newnode = (struct node*)malloc(sizeof(struct node));
+    newnode->data = data;
+    struct node *temp = head;
+    while(temp->data!=element){
         if(temp->next==NULL){
             printf("\nElement position for insertion not found!");
             return;
         }
         temp=temp->next;
     }
-    newnode->next=temp->next;
+    newnode->next = temp->next;
     temp->next=newnode;
 }
+//deleteatbegin
 void deleteatbegin(){
-    struct node *temp = head;
+    struct node *temp=head;
     head=head->next;
     free(temp);
 }
+//deleteatend
 void deleteatend(){
-    struct node *temp = head;
+    struct node *temp=head;
     while(temp->next->next!=NULL){
         temp=temp->next;
     }
-    struct node *loc = temp->next;
+    struct node *del=temp->next;
     temp->next=NULL;
-    free(loc);
+    free(del);
 }
-void deletenode(int data){
-    struct node *temp=head,*prev;
-
-    if(temp!=NULL && temp->data==data){
-        head=head->next;
-        free(temp);
+//void deleteatpos
+void deleteatpos(int pos){
+    if(pos==1){
+        deleteatbegin();
         return;
     }
-    while(temp!=NULL && temp->data!=data){
-        prev=temp;
-        temp=temp->next;
-    }
-    prev->next=temp->next;
-    free(temp);
-}
-void search(int data){
+    int count=1;
     struct node *temp=head;
-    int count=0; //starting counting from 0
-     while(temp!=NULL){
+    while(count!=pos-1){
         temp=temp->next;
         count++;
-        if(temp!=NULL && temp->data==data){
-            printf("\nElement found at %d position",count);
-            return;
-        }
     }
-    printf("\nElement not found!\n");   
+    struct node *del = temp->next;
+    temp->next=temp->next->next;
+    free(del);
 }
-void sort(){
-    struct node *p=head,*q;
-    int temp;
-    while(p->next!=NULL){
-        q=p->next;
-        while(q!=NULL){
-            if(p->data > q->data){
-                temp = p->data;
-                p->data=q->data;
-                q->data = temp;
-            }
-            q=q->next;
-        }
-        p=p->next;
+//void delete element
+void deleteelement(int data){
+    struct node *temp=head;
+    if(temp->data==data){
+        deleteatbegin();
+        return;
     }
-
-}   
+    while(temp->next->data!=data){
+        temp=temp->next;
+    }
+    struct node *del = temp->next;
+    temp->next=temp->next->next;
+    free(del);
+}
+//reverse
 void reverse(){
     struct node *temp=NULL,*temp1;
     while(head!=NULL){
@@ -116,55 +148,118 @@ void reverse(){
     }
     head=temp1;
 }
+//search
+void search(int data){
+    struct node *temp=head;
+    int count = 1;
+    while(temp->next!=NULL){
+        if(temp->data==data && temp!=NULL){
+            printf("\nElement found at %d",count);
+            return;
+        }
+        temp=temp->next;
+        count++;
+    }
+    printf("\nElement not found!");
+}
+//concatenate
 void concatenate(struct node *ptr, struct node *ptr1){
     while(ptr->next!=NULL){
         ptr=ptr->next;
     }
     ptr->next=ptr1;
 }
-struct node *intersection(struct node *ptr, struct node *ptr1) {
-    struct node *result = NULL; 
-    struct node *p = ptr; 
-    while (p != NULL) {
-        struct node *q = ptr1;
-        while (q != NULL) {
-            if (p->data == q->data) {
-                struct node *newNode = (struct node *)malloc(sizeof(struct node));
-                newNode->data = p->data;
-                newNode->next = result;
-                result = newNode;
-                break; 
+//intersection
+struct node *intersection(struct node *ptr1, struct node *ptr2){
+    struct node *result=NULL,*p=ptr1;
+    while(p!=NULL){
+        struct node *q=ptr2;
+        while(q!=NULL){
+            if(p->data==q->data){
+                result=insertnode(result,p->data);
+                break;
             }
-            q = q->next;
+            q=q->next;
         }
-        p = p->next;
+        p=p->next;
     }
-    return result; 
+    return result;
+}
+//sort
+void sort(struct node *ptr){
+    struct node *ptr1=ptr,*ptr2;
+    int temp;
+    while(ptr1!=NULL){
+        ptr2=ptr1->next;
+        while(ptr2!=NULL){
+            if(ptr1->data>=ptr2->data){
+                temp=ptr1->data;
+                ptr1->data=ptr2->data;
+                ptr2->data=temp;
+            }
+            ptr2=ptr2->next;
+        }
+        ptr1=ptr1->next;
+    }
 }
 
 
+void printnew(struct node *ptr){
+    struct node *p = ptr;
+    printf("\n[");
+    while(p!=NULL){
+        printf(" %d",p->data);
+        p=p->next;
+    }
+    printf(" ]\n");
+}
+//union
+struct node *Union(struct node *ptr1, struct node *ptr2){
+    struct node *result=NULL,*p=ptr1;
+    while(p!=NULL){
+        struct node *q=ptr2;
+        while(q!=NULL){
+            if(p->data==q->data){
+                break;
+            }
+            q=q->next;
+        }
+        if(q==NULL){
+            result=insertnode(result,p->data);
+        }
+        p=p->next;
+        
+    }
+    struct node *temp=result;
+    while(temp->next!=NULL){
+        temp=temp->next;
+    }
+    temp->next=ptr2;
+    sort(result);
+    return result;  
+}
 int main(){
-    insertatbegin(55);
-    insertatend(56);
-    insertatend(57);
-    insertatbegin(54);
-    insertafter(57,78);
-    insertatend(64);
+    insertatbegin(5);
+    insertatbegin(6);
+    insertatend(8);
+    insertatend(12);
+    insertatpos(3,19);
+    insertafterpos(3,14);
+    insertafter(8,16);
     printlist();
-    sort();
+    struct node *head1=NULL;
+    head1 = insertnode(head1,24);
+    head1 = insertnode(head1,65);
+    head1 = insertnode(head1,12);
+    head1 = insertnode(head1,45);
+    head1 = insertnode(head1,46);
+       head1 = insertnode(head1,47);
+          head1 = insertnode(head1,8);
+    sort(head);
+    sort(head1);
     printlist();
-    reverse();
-    printlist();
-    struct node *head1 = NULL;
-    struct node *newnode = (struct node*)malloc(sizeof(struct node));
-    newnode->data = 55;
-    newnode->next=head1;
-    head1=newnode;
-    struct node *newnode1 = (struct node*)malloc(sizeof(struct node));
-    newnode1->data = 56;
-    newnode1->next=head1;
-    head1=newnode1;
-    head = intersection(head,head1);
-    printlist();
+    printnew(head1);
+    struct node *unionRes = Union(head1,head);
+    printnew(unionRes);
     return 0;
 }
