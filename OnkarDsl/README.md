@@ -9,8 +9,9 @@ Explore various data structures and sorting algorithms:
 - [Insertion Sort](5_insertionSort.c)
 - [Merge Sort](6_mergeSort.c)
 - [Time Complexities](6_timeComplexities.md)
-- [Linked List](7_linkedList.c)
-- [Searching and Sorting Using Linked List](8_dllSearching_sorting.c)
+- [Single Linked List Operations](7_SingleLinkedList.c)
+- [Doubly Linked List Operations](8_doublyLinkedList.c)
+- [Binary Search Tree](9_Tree.c)
 
 ## NOTES
 
