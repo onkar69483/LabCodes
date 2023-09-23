@@ -1,5 +1,4 @@
 #include <iostream>
-#include <stdio.h>
 #include <stdlib.h>
 
 using namespace std;
@@ -14,7 +13,7 @@ struct node *head,*tail=NULL;
 struct node *head1,*tail1=NULL;
 
 void insert1(string data){
-	struct node *newnode = (struct node*)malloc(sizeof(struct node));
+	struct node *newnode = new node; //new way of allocating memory in cpp instead of using malloc
 	newnode->data=data;
 	if(head==NULL){
 		head=tail=newnode;
@@ -29,7 +28,7 @@ void insert1(string data){
 	}
 }
 void insert2(string data){
-	struct node *newnode = (struct node*)malloc(sizeof(struct node));
+	struct node *newnode = new node;
 	newnode->data=data;
 	if(head1==NULL){
 		head1=tail1=newnode;
@@ -60,7 +59,7 @@ struct node *intersection(struct node *ptr1, struct node *ptr2){
 		struct node *q=ptr2;
 		while(q!=NULL){
 			if(p->data==q->data){
-				struct node *newnode = (struct node*)malloc(sizeof(struct node));
+				struct node *newnode = new node;
 				newnode->data=p->data;
 				newnode->next=result;
 				result=newnode;
@@ -83,7 +82,7 @@ struct node *Union(struct node *ptr1, struct node *ptr2){
 			q=q->next;	
 		}
 		if(q==NULL){
-			struct node *newnode = (struct node*)malloc(sizeof(struct node));
+			struct node *newnode = new node;
 			newnode->data=p->data;
 			newnode->next=result;
 			result=newnode;
@@ -116,5 +115,18 @@ int main() {
 	printlist(intersection_result);
 	cout<<"Union Result: ";
 	printlist(union_result);
+
+//delete memory after program usage to avoid memory leak.	
+struct node* temp;
+    while (head != nullptr) {
+        temp = head;
+        head = head->next;
+        delete temp;
+    }
+    while (head1 != nullptr) {
+        temp = head1;
+        head1 = head1->next;
+        delete temp;
+    }
 	return 0;
 }
