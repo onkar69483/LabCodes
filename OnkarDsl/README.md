@@ -12,7 +12,8 @@ Explore various data structures and sorting algorithms:
 - [Linked List](7_linkedList.c)
 - [Searching and Sorting Using Linked List](8_dllSearching_sorting.c)
 
-```
+## NOTES
+
 The `malloc` function itself should work in offline compilers just as it does in online compilers because it's part of the standard C library. However, the issues you encountered were not related to the `malloc` function itself but rather how you were using it in conjunction with C++ code and structures.
 
 Here's why `malloc` was problematic in your code:
@@ -24,4 +25,4 @@ Here's why `malloc` was problematic in your code:
 3. **Undefined Behavior:** Mixing C-style memory management with C++ code can result in undefined behavior. This means that your program may behave inconsistently or unpredictably. Undefined behavior can manifest as program crashes, incorrect results, or other unexpected behavior.
 
 In summary, it's not that `malloc` wasn't working in your offline compiler; it's that mixing C-style memory management with C++ code can lead to issues such as memory leaks and undefined behavior. To ensure proper memory management and compatibility with C++ features, it's recommended to use C++ memory allocation (`new` and `delete`) when working with C++ code and objects.
-```
+
