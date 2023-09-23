@@ -13,7 +13,7 @@ struct node *head,*tail=NULL;
 struct node *head1,*tail1=NULL;
 
 void insert1(string data){
-	struct node *newnode = new node; //new way of allocating memory in cpp instead of using malloc
+	struct node *newnode = new node;
 	newnode->data=data;
 	if(head==NULL){
 		head=tail=newnode;
@@ -55,14 +55,29 @@ void printlist(struct node *ptr){
 
 struct node *intersection(struct node *ptr1, struct node *ptr2){
 	struct node *result=NULL,*p=ptr1;
+        //if either of the set is empty
+    if(ptr1==NULL || ptr2==NULL){
+        return result;
+    }
+
+    //code for non empty sets
 	while(p!=NULL){
 		struct node *q=ptr2;
 		while(q!=NULL){
 			if(p->data==q->data){
 				struct node *newnode = new node;
-				newnode->data=p->data;
-				newnode->next=result;
-				result=newnode;
+                newnode->data=p->data;
+	            if(result==NULL){
+                    result=newnode;
+                    result->prev = NULL;
+                    result->next = NULL;
+                }
+                else{
+                    result->prev=newnode;
+                    newnode->next = result;
+                    newnode->prev = NULL;
+                    result = newnode;
+                }
 			}
 			q=q->next;	
 		}
@@ -73,6 +88,17 @@ struct node *intersection(struct node *ptr1, struct node *ptr2){
 
 struct node *Union(struct node *ptr1, struct node *ptr2){
 	struct node *result=NULL,*p=ptr1;
+    //if either of the set is empty
+    if(ptr1==NULL){
+        result=ptr2;
+        return result;
+    }
+    if(ptr2==NULL){
+        result=ptr1;
+        return result;
+    }
+
+    //code for non empty sets
 	while(p!=NULL){
 		struct node *q=ptr2;
 		while(q!=NULL){
@@ -83,9 +109,18 @@ struct node *Union(struct node *ptr1, struct node *ptr2){
 		}
 		if(q==NULL){
 			struct node *newnode = new node;
-			newnode->data=p->data;
-			newnode->next=result;
-			result=newnode;
+            newnode->data=p->data;
+            if(result==NULL){
+                result=newnode;
+                result->prev = NULL;
+                result->next = NULL;
+            }
+            else{
+                result->prev=newnode;
+                newnode->next = result;
+                newnode->prev==NULL;
+                result = newnode;
+            }
 		}
 		p=p->next;
 	}
@@ -94,6 +129,7 @@ struct node *Union(struct node *ptr1, struct node *ptr2){
 		temp=temp->next;
 	}
 	temp->next=ptr2;
+    ptr2->prev=temp;
 	return result;	
 }
 
@@ -115,18 +151,5 @@ int main() {
 	printlist(intersection_result);
 	cout<<"Union Result: ";
 	printlist(union_result);
-
-//delete memory after program usage to avoid memory leak.	
-struct node* temp;
-    while (head != nullptr) {
-        temp = head;
-        head = head->next;
-        delete temp;
-    }
-    while (head1 != nullptr) {
-        temp = head1;
-        head1 = head1->next;
-        delete temp;
-    }
 	return 0;
 }
