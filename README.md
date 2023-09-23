@@ -15,9 +15,10 @@ This repository contains all the data and experiments conducted during my Lab Se
 - [Insertion Sort](OnkarDsl/5_insertionSort.c)
 - [Merge Sort](OnkarDsl/6_mergeSort.c)
 - [Time Complexities](OnkarDsl/6_timeComplexities.md)
-- [Linked List](OnkarDsl/7_linkedList.c)
-- [Searching and Sorting Using Linked List](OnkarDsl/8_dllSearching_sorting.c)
-
+- [Single Linked List Operations](OnkarDsl/7_SingleLinkedList.c)
+- [Doubly Linked List Operations](OnkarDsl/8_doublyLinkedList.c)
+- [Binary Search Tree](OnkarDsl/9_Tree.c)
+  
 ## Programming Paradigm Lab
 ### Assignments
 - [Assignment 1](OnkarPPL/Assignment1.md)
