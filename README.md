@@ -7,7 +7,7 @@
 This repository contains all the data and experiments conducted during my Lab Sessions.
 
 ## Data Structure Lab
-### Algorithms and Sorting
+
 - [Search Algorithms](OnkarDsl/1_searchAlgo.c)
 - [Bubble Sort](OnkarDsl/2_bubble_sort.c)
 - [Selection Sort](OnkarDsl/3_selectionSort.c)
