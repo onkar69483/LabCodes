@@ -12,15 +12,14 @@ int linearSearch(int arr[],int target){
 }
 
 int recursiveLinSearch(int arr[],int i,int target){
-	
-	if(arr[i]==target){
-		return i;
-	}else if(9<i+1){
-		return -1;
-	}
-	else{
-		return recursiveLinSearch(arr,i+1,target);
-	}
+    if (i < 0) {
+        return -1; // Target not found in the array
+    }
+    if (arr[i] == target) {
+        return i; // Target found at index i
+    } else {
+        return recursiveLinearSearch(arr, i - 1, target); // Continue searching with the previous index
+    }	
 }
 int binarySearch(int arr[],int target){
 	int left = 0, right = 9,mid;
