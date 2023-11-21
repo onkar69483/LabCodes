@@ -40,7 +40,7 @@ int binarySearch(int arr[],int target){
 
 int recursiveBinSearch(int arr[],int low,int high,int target){
 	int mid;
-	while(low<=high){
+	if(low<=high){
 		mid=(low+high)/2;
 		if(arr[mid]==target){
 			return mid;
