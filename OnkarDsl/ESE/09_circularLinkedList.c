@@ -192,6 +192,26 @@ struct node *deleteElement(struct node *head, int element){
     return head;
 }
 
+struct node *reverse(struct node *head){
+    struct node *current,*previous;
+    
+    struct node *temp=head;
+    while(temp->next!=head){
+        temp=temp->next;
+    }
+    previous=temp;
+    temp=head;
+
+    do{
+        current=temp;
+        temp=temp->next;
+        current->next=previous;
+        previous=current;
+    }while(temp!=head);
+    head=previous;
+    return head;
+}
+
 int main(){
     struct node *head=NULL;
     head = insertAtBegin(head, 1);
@@ -205,5 +225,7 @@ int main(){
     printList(head);
     head = deleteElement(head, 63);
     printList(head);
+    struct node *reverseL = reverse(head);
+    printList(reverseL);
     return 0;
 }
