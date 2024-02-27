@@ -1,0 +1,91 @@
+-- what is the costliest book in sibm library
+select Bname,Price from Books where Price = (select min(Price) from Books where Lid = (select Lid from ILibrary where Lname = "SIBMLib"));
+
+-- which library has the costliest book
+select Lid,Lname from ILibrary where Lid = (select Lid from Books where Price = (select max(Price) from Books));
+
+-- how many students from sit issued the book
+select count(Memid) from Student where Memid in(select Memid from Issue where Lid = (select Lid from ILibrary where Lname = "SITLib"));
+
+-- what is average cost of books in sitmn library
+select AVG(Price) from Books where Lid = (select Lid from ILibrary where Lname = "SITMNLib");
+-- or
+select avg(totalcost) from Purchase where Lid = (select Lid from ILibrary where Lname = "SITMNLib");
+
+-- what is the total cost of purchase made by sit in the month of jan and june
+select sum(totalcost) from Purchase where (month(Date) between 1 and 6) and Lid = (select Lid from ILibrary where Lname = "SITLib");
+
+-- how many books are written by shruti
+select count(Bid) "Books written by Shruti" from Writes where Aid = (select Aid from Author where Aname = "Shruti");
+
+-- what is the costliest book published by pragati book store
+select Bid,Bname,Price from Books where Price in (select max(Price) from Books where Bid in(select Bid from Writes where Pid = (select Pid from Publisher where Pname = "Pragati book store")));
+
+-- how many copies of books do sit has
+select count(Bid) from Noofcopies where Lid = (select Lid from ILibrary where Lname = "SITLib");
+-- or
+select sum(quantity) "Number of Copies" from Purchase where Lid = (select Lid from ILibrary where Lname = "SITLib");
+
+-- what is the average cost of books written by shivam kapoor
+select avg(price) from Books where Bid in (select Bid from Writes where Aid = (select Aid from Author where Aname = "Shivam Kapoor"));
+
+-- how many books are sold by seller living in pune
+select sum(quantity) from Purchase where Sid in (select Sid from Seller where City = "Pune");
+
+-- print the student name in capital who belongs to ssbs
+select upper(Sname) "Student Name" from Student where Memid in(select Memid from Member where Lid = (select Lid from ILibrary where Lname = "SSBSLib"));
+
+-- add two months to the issue date of book written by shivam kapoor
+select issuedate,date_add(issuedate, interval 2 month) "add months" from Issue where Bid in (select Bid from Writes where Aid=(select Aid from Author where Aname = "Shivam Kapoor"));
+
+-- what was the last day of the month when satish issued the book
+select issuedate,last_day(issuedate) from Issue where Memid = (select Memid from Student where Sname = "Satish");
+select issuedate,last_day(issuedate) from Issue where Memid = (select Memid from Staff where Stname = "Satish");
+
+-- how many books are issued from jan to march 2010 and 2020
+select count(Bid) from Issue where (month(issuedate) between 1 and 3) and (year(issuedate) between 2010 and 2020);
+
+-- how many books have copies less than 5 available in the sibm library
+select count(Bid) from Purchase where Lid in (select Lid from ILibrary where Lname = "SIBMLib") and quantity < 5;
+
+
+-- Functions practice
+
+-- Date functions
+SELECT NOW(); -- Example output: 2024-02-27 12:34:56
+SELECT CURDATE(); -- Example output: 2024-02-27
+select curtime();
+select date('24-06-24');
+select curdate(),date_add(curdate(), interval 7 month);
+select curdate(),date_sub(curdate(), interval 7 day);
+select datediff('2024-02-27','2024-02-20');
+select date_format(now(),'%y-%m-%d %h:%i:%s');
+select extract(month from now());
+
+-- Numeric Functions
+select abs(-4324);
+select abs(datediff('24-01-15','24-05-24'));
+select ceil(56.3);
+select floor(54.6);
+select power(2,4);
+select mod(10,3);
+select round(10.5,0);
+select truncate(10.545,2);
+select sqrt(45);
+
+-- Char functions
+select lower('Hwllo');
+select upper('hisdH');
+SELECT LTRIM('onkar');
+select rtrim('sadas	');
+select substr('onkarmendhapurkar',3,5);
+select rpad('onkar',10,'*');
+select lpad('onkar',10,'*');
+
+select last_day(current_date());
+
+select instr('onkar', 'k');
+
+SELECT INITCAP('hello world'); -- does not work
+
+select replace('onkar','n','m')
